@@ -1,5 +1,5 @@
 <?php 
-    $host = "localhost:50000"; //hostname
+    $host = "localhost"; //hostname
     $db = "final_exam_comp1006"; //database name
     $user = "root"; //username
     $password = ""; //password
