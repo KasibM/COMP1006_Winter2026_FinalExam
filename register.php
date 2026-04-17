@@ -112,6 +112,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Execute the insert query
         $stmt->execute(); 
 
+        // Let them know their Registration was successful
+        $success = "Registration successful!";
+        
+
     }
 }
 ?>
@@ -138,11 +142,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?= htmlspecialchars($success); ?>
             <br>
             <!-- Provide a link to the login page -->
-            <a href="login.php">Go to Login</a>
+            <a href="Login.php">Login</a>
         </div>
-    <?php endif; ?>
-
-    <!-- Registration form -->
+    <?php else: ?>
+        <!-- Registration form -->
     <form method="post">
 
         <!-- Username input -->
@@ -153,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             name="username"
             value="<?= htmlspecialchars($username ?? ''); ?>"
             required>
-
+        <br>
         <!-- Email input -->
         <label for="email">Email</label>
         <input
@@ -162,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             name="email"
             value="<?= htmlspecialchars($email ?? ''); ?>"
             required>
-
+        <br>
         <!-- Password input -->
         <label for="password">Password</label>
         <input
@@ -170,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             id="password"
             name="password"
             required>
-
+        <br>
         <!-- Confirm password input -->
         <label for="confirm_password">Confirm Password</label>
         <input
@@ -178,16 +181,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             id="confirm_password"
             name="confirm_password"
             required>
-
+        <br>
         <!-- Submit button -->
         <button type="submit">Create Account</button>
 
         <!-- Link to login page -->
         <a href="login.php">Login Instead</a>
     </form>
+    <?php endif; ?>
+
+    
 </main>
 
-<?php
-// Include the site footer
-require "includes/footer.php";
-?>
