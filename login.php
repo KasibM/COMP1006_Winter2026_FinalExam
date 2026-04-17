@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             name="username_or_email"
             required
         >
-
+        <br>
         <!-- Password input -->
         <label for="password">Password</label>
         <input
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             name="password"
             required
         >
-
+        <br>
         <!-- Submit button -->
         <button type="submit">Login</button>
 
@@ -111,8 +111,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="register.php">Create Account</a>
     </form>
 </main>
-
-<?php
-// Include the site footer
-require "includes/footer.php";
-?>
