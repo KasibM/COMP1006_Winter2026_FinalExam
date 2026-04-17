@@ -1,6 +1,6 @@
 <?php 
     $host = "localhost:50000"; //hostname
-    $db = "book_manager"; //database name
+    $db = "final_exam_comp1006"; //database name
     $user = "root"; //username
     $password = ""; //password
     
