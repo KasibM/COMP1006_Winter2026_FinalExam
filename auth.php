@@ -1,6 +1,6 @@
 <?php
 
-//From Lesson 09
+//Adapted from Lesson 09
 
 session_start();
 

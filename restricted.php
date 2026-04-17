@@ -1,12 +1,11 @@
 <?php 
-//From Lesson 10
-require_once 'includes/header.php'
+//Adapted from Lesson 10
 ?>
 
 <body>
-    <main class="container restricted text-center">
+    <main>
         <h1> Sorry, you must be logged into view this content! </h1>
-        <a href="index.php" class="btn btn-secondary"> Back to Home Page </a>
+        <a href="index.php"> Back to Home Page </a>
     </main>
 </body>
 

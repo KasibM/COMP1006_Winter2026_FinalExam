@@ -1,11 +1,10 @@
 <?php
-//From Lesson 09
+//Adapted from Lesson 09
 
 // Include the database connection so we can interact with the users table
 require "includes/connect.php";
 
-// Include the site header (navigation, Bootstrap, etc.)
-require "includes/header.php";
+
 
 // Array to store validation errors
 $errors = [];
@@ -117,14 +116,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<main class="container mt-4">
+<main>
     <h2>Sign Up</h2>
 
     <!-- Display validation errors if any exist -->
     <?php if (!empty($errors)): ?>
-        <div class="alert alert-danger">
+        <div>
             <h3>Please fix the following:</h3>
-            <ul class="mb-0">
+            <ul>
                 <?php foreach ($errors as $error): ?>
                     <!-- htmlspecialchars prevents XSS attacks -->
                     <li><?= htmlspecialchars($error); ?></li>
@@ -135,60 +134,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Display success message if account creation succeeded -->
     <?php if ($success !== ""): ?>
-        <div class="alert alert-success">
+        <div>
             <?= htmlspecialchars($success); ?>
             <br>
             <!-- Provide a link to the login page -->
-            <a href="login.php" class="btn btn-sm btn-success mt-2">Go to Login</a>
+            <a href="login.php">Go to Login</a>
         </div>
     <?php endif; ?>
 
     <!-- Registration form -->
-    <form method="post" class="mt-3">
+    <form method="post">
 
         <!-- Username input -->
-        <label for="username" class="form-label">Username</label>
+        <label for="username" >Username</label>
         <input
             type="text"
             id="username"
             name="username"
-            class="form-control mb-3"
             value="<?= htmlspecialchars($username ?? ''); ?>"
             required>
 
         <!-- Email input -->
-        <label for="email" class="form-label">Email</label>
+        <label for="email">Email</label>
         <input
             type="email"
             id="email"
             name="email"
-            class="form-control mb-3"
             value="<?= htmlspecialchars($email ?? ''); ?>"
             required>
 
         <!-- Password input -->
-        <label for="password" class="form-label">Password</label>
+        <label for="password">Password</label>
         <input
             type="password"
             id="password"
             name="password"
-            class="form-control mb-3"
             required>
 
         <!-- Confirm password input -->
-        <label for="confirm_password" class="form-label">Confirm Password</label>
+        <label for="confirm_password">Confirm Password</label>
         <input
             type="password"
             id="confirm_password"
             name="confirm_password"
-            class="form-control mb-4"
             required>
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-secondary">Create Account</button>
+        <button type="submit">Create Account</button>
 
         <!-- Link to login page -->
-        <a href="login.php" class="btn btn-secondary">Login Instead</a>
+        <a href="login.php">Login Instead</a>
     </form>
 </main>
 

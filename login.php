@@ -1,11 +1,9 @@
 <?php
-//From Lesson 09
+//Adapted from Lesson 09
 
 // Sessions allow us to store login information across multiple pages.
 session_start();
 require "includes/connect.php";
-require "includes/header.php";
-
  
 // Variable to store an error message if login fails
 $error = "";
@@ -74,45 +72,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<main class="container mt-4">
+<main>
     <h2>Login</h2>
 
     <!-- If there is an error message, display it in a Bootstrap alert -->
     <?php if ($error !== ""): ?>
-        <div class="alert alert-danger">
+        <div>
             <!-- htmlspecialchars prevents malicious code from being displayed -->
             <?= htmlspecialchars($error); ?>
         </div>
     <?php endif; ?>
 
     <!-- Login form -->
-    <form method="post" class="mt-3">
+    <form method="post">
 
         <!-- Username or email input -->
-        <label for="username_or_email" class="form-label">Username or Email</label>
+        <label for="username_or_email">Username or Email</label>
         <input
             type="text"
             id="username_or_email"
             name="username_or_email"
-            class="form-control mb-3"
             required
         >
 
         <!-- Password input -->
-        <label for="password" class="form-label">Password</label>
+        <label for="password">Password</label>
         <input
             type="password"
             id="password"
             name="password"
-            class="form-control mb-4"
             required
         >
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-secondary">Login</button>
+        <button type="submit">Login</button>
 
         <!-- Link to registration page -->
-        <a href="register.php" class="btn btn-secondary">Create Account</a>
+        <a href="register.php">Create Account</a>
     </form>
 </main>
 
