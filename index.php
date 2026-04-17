@@ -54,7 +54,7 @@
                         
                         <td>
                             <a
-                                href="delete?id=<?= urlencode($image['id']); ?>"
+                                href="delete.php?id=<?= urlencode($image['id']); ?>"
                                 onclick="return confirm('Please confirm deletion of this image.');">
                                 Delete
                             </a>
