@@ -5,9 +5,8 @@
 <body>
     <main>
         <h1> Sorry, you must be logged into view this content! </h1>
-        <a href="index.php"> Back to Home Page </a>
+        <a href="login.php"> Login </a>
     </main>
 </body>
 
 </html>
-<?php require_once 'includes/footer.php' ?>
